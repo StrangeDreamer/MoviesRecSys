@@ -1,0 +1,9 @@
+r.item 		828 items
+r.train 	38879 ratings 			80%
+r.probe 	5433 ratings 			10%  ==> prediction.txt ==> 指标MAE,RMSE来对比原始评分和预测评分,不关r.test什么事
+r.test 		5433 user-item pairs 	10%  ==>prediction.txt,没有指标MAE，RMSE , 此时r.probe作为训练集
+
+---------------可以从代码看出来-----------------------------------------|
+		if(testFile.equals("FRT dataset" + File.separator + "r.test")) |
+			loadProfiles("FRT dataset" + File.separator + "r.probe");  |
+-----------------------------------------------------------------------|

@@ -1,0 +1,87 @@
+significance weighting
+
+default voting
+
+inverse user frequency
+
+- average user and item based for hybrid.
+
+Include probe data for training on test data
+
+Breese et al. (1998)
+
+Use a threshold for the neighbourhood size that is dynamic
+
+Implement a Trust based system on top of Resnick
+
+Use amplifications of neighbours with higher similarity
+
+- Also use Item based collaborative filtering hybrid
+
+Cross-verification folding
+
+Use content based recommendations hybrid e.g. genre Use the Genre tags to help with predictions?
+
+If the standard deviation of a user ratings are low then give user filtering higher weights than item
+
+SVD
+
+---
+
+Matrix factorization
+Consider Singular Value Decomposition 
+or
+ Restricted Boltzmann Machine
+http://www.cs.toronto.edu/~rsalakhu/papers/rbmcf.pdf
+
+---
+
+Look for patterns of users that rate mostly widely popular films mostly. Maybe there is a pattern of users segmentation that might improve the over rating
+
+Considering ignoring very popular movies altogether as this won't really help if everyone up votes 5 stars for Star Wars for example.
+
+--
+
+Ignore users who have only rated less than 5 books which are not "blockbusters" will lower coverage but maybe will be enough.
+Alternatively use some form of item based averages to fill in gaps in user ratings.. possibly weighed by genre of the small set
+
+Or 
+
+If the number of ratings are low by a specific user then use some weighting algorihtm to give more power the item based filtering 
+e.g. using the mean rating for a film to heavily influence the minimal data you have to work with. 
+
+---
+
+
+Look at outputting RMSE based on how many ratings the user has made. e.g 
+
+# of ratings	# of users in set		RMSE for this set
+<= 1 				2334					1.42323
+<= 2							
+<= 7
+<= 20
+<= 54	
+<= 148
+<= 403
+<= 1096
+<= 2980
+..
+
+
+
+---
+
+The increments on an 1-5 scale should not be viewed as equal, those at the edges are bigger.
+
+Likert scales give ordinal data. That it (sic), the data is ranked "strongly agree" is usually better than "agree." However,
+it's not interval data. You can't say the distances between "strongly agree" and "agree" would be the same as "neutral" and
+"disagree," for example. People tend to think there is a bigger difference between items at the extremes of the scale than 
+in the middle (there is some evidence cited in Kaptein's paper that this is the case). For ordinal data, one should use 
+non-parametric statistical tests which do not assume a normal distribution of the data. Furthermore, because of this it makes 
+no sense to report means of likert scale data--you should report the mode.
+
+Consider re-normaise ratings onto a non-linear interval scale
+---
+
+Can probability help in determining a prediction rating?
+
